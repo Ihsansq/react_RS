@@ -58,7 +58,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login />,
+        element: <Login />,  /* import login ke element */
       },
     ],
   },
