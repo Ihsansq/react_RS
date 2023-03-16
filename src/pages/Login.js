@@ -17,7 +17,7 @@ export default function Login() {  /* logika untuk user dapat login */
     const { data } = await axios.post('http://localhost:8080/login', {
       username,
       password,
-    })
+    }) /* request body yg akan dikirim ke backend, jika berhasil login akan diberikan akses token */
     if (data) {   /* logika ketika username dan password berhasil maka muncul pop up berhasil */
       MySwal.fire({
         title: <strong>Berhasil Login!!!</strong>,
@@ -25,12 +25,12 @@ export default function Login() {  /* logika untuk user dapat login */
         heightAuto: false /* untuk mematikan style ke atas */
       })
       navigate('/content'); /* jika berhasil login akan ke halaman beranda */
-      localStorage.setItem('access_token', data.access_token);
+      localStorage.setItem('access_token', data.access_token); /* ketika berhasil login akan localStorage akan menyimpan key access_token dgn value data.access_token */
     } else {
       MySwal.fire({
         title: <strong>Gagal Login!!!</strong>,
-        icon: 'error',
-        heightAuto: false
+        icon: 'success',
+        heightAuto: false /* untuk mematikan style ke atas */
       })
     }
   };

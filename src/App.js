@@ -32,8 +32,8 @@ const router = createBrowserRouter([
       {
         path: "/content/:id",
         element:
-          <ProtectedRoute>
-            <Content
+          <ProtectedRoute> {/*ProtectedRoute= parent component dari content */}
+            <Content /* content=children dari ProtectedRoute */
               title="Content Page"
             />,
           </ProtectedRoute>
